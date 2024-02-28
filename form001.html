@@ -6,20 +6,55 @@
     <title>Formulário</title>
     <style>
         * {
-            padding: 0px;
-            margin: 0px;
             font-family: Arial, Helvetica, sans-serif;
         }
     </style>
 </head>
 <body>
     <h1>Meu Primeiro formulário</h1> 
-    <form action="cadastro.php" method="POST">
-        <p><label for="idnome">Nome:</label> 
-            <input type="text" name="nome" id="idnome"></p><br>
-        <p><label for="idsobrenome">Sobrenome:</label> 
-            <input type="text" name="sobrenome" id="idsobrenome"></p><br>
-        <p><input type="submit" value="Enviar"></p>
+    <form action="cadastro.php" method="get" autocomplete="on">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <p><br>
+                <label for="inome">Nome</label>
+                <input type="text" name="nome" id="inome" required maxlength="30" placeholder="Nome completo" autocomplete="name">
+            </p>
+            <p>
+                <label for="idsobrenome">Sobrenome:</label>
+                <input type="text" name="sobrenome" id="idsobrenome">
+            </p>
+            <p>
+                <label for="iemail">E-mail</label>
+                <input type="email" name="email" id="iemail" aria-autocomplete="email" required>
+            </p>
+            <p>
+                <label for="itel">Telefone</label>
+                <input type="tel" name="tel" id="itel" autocomplete="tel" pattern="^\(\d{2}\)\d{4,5}-\d{4}$" required placeholder="(xx)xxxx-xxxx">
+            </p><br>
+        </fieldset>
+        <fieldset>
+            <legend>Esportes favoritos</legend>
+            <input type="checkbox" name="esbas" id="iesbas">
+            <label for="iesbas">Basquete</label><br>
+            <input type="checkbox" name="esfut" id="iesfut">
+            <label for="iesfut">Futebol</label><br>
+            <input type="checkbox" name="esnat" id="iesnat">
+            <label for="iesnat">Natação</label><br>
+            <input type="checkbox" name="esten" id="iesten">
+            <label for="iesten">Tênis</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" name="sexo" id="isxmas" value="M">
+            <label for="isxmas">Masculino</label>
+            <input type="radio" name="sexo" id="isxfem" value="F" checked>
+            <label for="isxfem">Feminino</label>
+        </fieldset>
+        <p><br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+
     </form>
     
 </body>
