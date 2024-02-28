@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Meu Primeiro formulário</h1> 
-    <form action="cadastro.php" method="get" autocomplete="on">
+    <form action="cadastro.php" method="post" autocomplete="on">
         <fieldset>
             <legend>Dados Pessoais</legend>
             <p><br>
@@ -49,13 +49,60 @@
             <label for="isxmas">Masculino</label>
             <input type="radio" name="sexo" id="isxfem" value="F" checked>
             <label for="isxfem">Feminino</label>
+        </fieldset><br>
+        <fieldset>
+            <p>
+                <label for="icor">Cor:</label>
+                <input type="Color" name="cor" id="icor" value="#00ff00">
+            </p>
+            <p>
+                <label for="inivel">Nível de Satisfção</label>
+                <input type="range" name="nivel" id="inivel" min="1" max="10" value="1">
+            </p>
+            <p>
+                <label for="ifoto">Foto do perfil</label>
+                <input type="file" name="foto" id="ifoto">
+            </p>
+        </fieldset><br>
+        <fieldset>
+            <p>
+                <label for="iesten">Estado</label>
+                <select name="estado" id="iest">
+                    <option value="" selected>--- Escolha ---</option>
+                    
+                    <optgroup label="Região Sudeste">
+                        <option value="MG">Minas Gerais</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP">São Paulo</option>
+                    </optgroup>
+
+                    <optgroup label="Região Nordeste">
+                        <option value="MA">Maranhão</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                    </optgroup>
+                </select>
+            </p>
+            <p>
+                <label for="iprof">Profissão</label>
+                <input type="text" name="prof" id="iprof" list="lstprof">
+                <datalist id="lstprof">
+                    <option value="Administrador"></option>
+                    <option value="Contabilista"></option>
+                    <option value="Desenvolvedor"></option>
+                    <option value="Professor"></option>
+                </datalist>
+            </p>
+            <p>
+                <label for="imsg">Mensagem:</label><br>
+                <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+            </p>
         </fieldset>
-        <p><br>
+        <br>
+        <p>
             <input type="submit" value="Enviar">
             <input type="reset" value="Limpar">
         </p>
-
     </form>
-    
 </body>
 </html>
